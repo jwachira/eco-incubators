@@ -4,10 +4,13 @@ EcoIncubators::Application.routes.draw do
   end
   root :to => "home#index"
   devise_for :users
+  
   namespace :admin do |admin|
     resources :users
     resources :pages
     resources :categories
   end  
+  
+  match 'admin' => "admin/pages#index", :as => :admin_dashboard
 
 end

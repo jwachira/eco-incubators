@@ -20,3 +20,4 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'carrierwave'
 # gem 'rmagick'
+gem "configatron", "~> 2.9.0"

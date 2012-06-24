@@ -16,7 +16,7 @@
     <header class="navbar navbar-fixed-top">
       <nav class="navbar-inner">
         <div class="container">
-		  <h3>Meridian Building, Next to Tuskys, opposite Kenya Archives</h3>
+		  		<h3>Meridian Building, Next to Tuskys, opposite Kenya Archives</h3>
           <%= render 'layouts/navigation' %>
         </div>
       </nav>
@@ -27,6 +27,7 @@
            <div class="row">
             <div class="span12">
               <%= render 'layouts/messages' %>
+              <h3><%= yield(:title) if show_title? %></h3>
               <%= yield %>
             </div>
           </div>

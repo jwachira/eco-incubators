@@ -19,8 +19,7 @@ class Admin::PagesController < ApplicationController
     @page = Page.new(params[:page])
 
     if @page.save
-      flash[:notice] = "Page has been successfully created."
-      redirect_to admin_pages_url
+      redirect_to admin_pages_url, :notice => "Page has been successfully created."
     else
       render :action => "new"
     end
@@ -29,8 +28,7 @@ class Admin::PagesController < ApplicationController
   def update
     @page = Page.find(params[:id])
     if @page.update_attributes(params[:page])
-      flash[:notice] = "Page has been successfully updated."
-      redirect_to admin_page_url(@page)
+      redirect_to admin_page_url(@page), :notice => "Page has been successfully updated."
     else
       render :action => "edit"
     end
