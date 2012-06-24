@@ -1,0 +1,10 @@
+<%= f.input :title %>
+<%= f.input :short_description, :as => :text   %>
+<%= f.input :long_description, :as => :text , :input_html => {:class => "non-editor"} %>
+<%= f.input :active, :as => :boolean %>
+<%= f.input :is_product, :as => :boolean %>
+<%= f.input :quantity %>
+<%= f.input :price %>
+<%= f.file_field :image %>
+
+

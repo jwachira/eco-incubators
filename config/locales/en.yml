@@ -2,4 +2,17 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  all_users: "All Users"
+  all_pages: "All Pages"
+  all_categories: "All Categories"
+  add_page: "Add Page"
+  add_user: "Add User"
+  add_category: "Add Category"
+  cancel_account: "Cancel Account"
+  edit_page: "Edit Page"
+  edit_category: "Edit Category"
+  new_page: "New Page"
+  new_category: "New Category"
+  remove_page: "Remove Page"
+  update: "Update"
+  

@@ -1,0 +1,16 @@
+<h3><%= "#{@page.title.capitalize} Details"%></h3>
+<p>
+	<%= link_to (:edit_page), edit_admin_page_url(@page) %>
+	<%= link_to (:remove_page), admin_page_url(@page), :confirm => "Are you sure?", :method => :delete %>	
+<p>
+
+<p>Title: <%= @page.title.capitalize %></p>
+<p>Short Description: <%= @page.short_description %></p>
+<p>Long Description: <%= @page.long_description %></p>
+<p>Display?: <%= @page.active ? 'Yes':'No' %></p>
+<p>Product?: <%= @page.is_product ? 'Yes':'No' %></p>
+<p>Price: <%= @page.price %></p>
+<p>Quantity: <%= @page.quantity %></p>
+<p><%= image_tag @page.image_url.to_s %></p>
+
+

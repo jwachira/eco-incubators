@@ -1,0 +1,8 @@
+<h3><%= t(:all_users) %></h3>
+<ul class="users">
+  <% @users.each do |user| %>
+    <li>
+      <%= link_to user.name, admin_user_path(user) %> signed up <%= user.created_at.to_date %>
+    </li>
+  <% end %>
+</ul>

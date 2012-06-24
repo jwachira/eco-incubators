@@ -1,0 +1,5 @@
+<h3><%= t(:edit_category) %></h3>
+<%= simple_form_for(@category, :url => admin_category_url(@category)) do |f| %>
+	<%= render  'form',  :f => f %>
+    <%= f.button :submit, t(:update) %>
+<% end %>

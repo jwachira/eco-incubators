@@ -1,0 +1,10 @@
+<h3><%= "#{@category.name.capitalize} Details"%></h3>
+<br>
+	<%= link_to "Edit", edit_admin_category_url(@category) %>
+	<%= link_to "Delete", admin_category_url(@category), :method => :delete %>	
+<br>
+
+<p>Name: <%= @category.name.capitalize %></p>
+<p>Parent: <%= @category.parent_id %></p>
+<p>Active?: <%= @category.active ? 'Yes':'No' %></p>
+

@@ -1,0 +1,10 @@
+<h3><%= t(:all_categories) %></h3>
+<ul class="categories">
+  <% @categories.each do |category| %>
+    <li>
+      <%= link_to category.name, admin_category_url(category) %>
+    </li>
+  <% end %>
+</ul>
+
+<br><%= link_to t(:new_category), new_admin_category_path %></br>
