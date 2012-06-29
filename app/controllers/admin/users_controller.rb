@@ -1,4 +1,7 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < AdminController
+  
+  respond_to :html, :js
+  
   def index
     @users = User.all
   end

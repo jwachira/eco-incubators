@@ -9,22 +9,28 @@
       <h1><a class="brand ubuntu"><%= link_to "Echochicks LTD", root_path %></a></h1>
       <div class="nav-collapse">
         <ul class="nav ubuntu">
-          <li class="active"><%= link_to "News" %></li>
-          <li class="dropdown"><%= link_to "Our Products" %>
-            <ul class="dropdown-menu"></ul>
-          </li>
-          <li><%= link_to "About Us" %></li>
-          <li><%= link_to "Help" %></li>
 		  	<% if user_signed_in? %>
 				<li> <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %> </li>
-		    	<li> <%= link_to 'Manage account', edit_user_registration_path %> </li>	
+		  		<li>
+		  			<%= link_to 'Manage Users', admin_users_path %>        
+		  		</li>
+		  		<li>
+		  			<%= link_to 'Manage Pages', admin_pages_path %>        
+		  		</li>
+		  		<li>
+		  			<%= link_to 'Manage Categories', admin_categories_path %>        
+		  		</li>
 		  	<% else%>
+		  		<li class="active"><%= link_to "News" %></li>
+          		<li class="dropdown"><%= link_to "Our Products" %>
+            		<ul class="dropdown-menu"></ul>
+          		</li>
+          		<li><%= link_to "About Us" %></li>
+          		<li><%= link_to "Help" %></li>
 		    	<li> <%= link_to 'Login', new_user_session_path %> </li>
-		    	<li> <%= link_to 'Sign up', new_user_registration_path %> </li>
 		  	<% end %>
         </ul>
       </div>
     </div>
   </div>
-
-<%#= link_to "Home", root_path, :class => 'brand' %>
+</div>

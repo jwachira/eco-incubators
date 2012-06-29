@@ -9,7 +9,6 @@
     <meta name="author" content="">
     <%= stylesheet_link_tag    "application", :media => "all" %>
     <%= stylesheet_link_tag    "home", :media => "all" %>
-
 	<%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
 	<%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" %>
 	<%= javascript_include_tag "jquery-rails.js" %>
@@ -21,7 +20,7 @@
   <body>
 	<%= render "layouts/banner" %>
 	<%= render "layouts/navigation" %>
-	<%= render "layouts/image_slider" %>
+	<%#= render "layouts/image_slider" %>
 	<%= yield %>
 	<%= render "layouts/footer" %>
   </body>

@@ -5,4 +5,9 @@ user = User.create! :name => 'Admin User', :email => 'chaitulittle1@gmail.com', 
 user.add_role :admin
 puts 'New user created: ' << user.name
 
+puts 'setting up default categories'
+category = Category.create! :name => 'Testimonials', :active => 1
+category = Category.create! :name => 'Products'    , :active => 1
+category = Category.create! :name => 'Top Selling' , :active => 1
+
 

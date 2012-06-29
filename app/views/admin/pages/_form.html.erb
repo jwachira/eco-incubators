@@ -5,8 +5,9 @@
 <br><%= f.input :is_product, :as => :boolean %></br>
 <br><%= f.input :quantity %></br>
 <br><%= f.input :price %></br>
-<br><%= f.file_field :image %></br>
-<br><%= f.text_field :remote_image_url %></br>
+<br><%= f.input :category_id, :as => :select, :collection => Category.all, :include_blank => false %></br>
+<br>Select File: <%= f.file_field :image, :label => "Upload" %></br>
+<br>Upload URL: <%= f.text_field :remote_image_url %></br>
 
 
 
