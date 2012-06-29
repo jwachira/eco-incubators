@@ -8,32 +8,20 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= stylesheet_link_tag    "home", :media => "all" %>
+
+	<%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" %>
+	<%= javascript_include_tag  "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js" %>
+	<%= javascript_include_tag "jquery-rails.js" %>
+	<%= javascript_include_tag "jquery.rambling.slider.js" %>	
     <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
   <body>
-    <header class="navbar navbar-fixed-top">
-      <nav class="navbar-inner">
-        <div class="container">
-		  <h3>Meridian Building, Next to Tuskys, opposite Kenya Archives</h3>
-          <%= render 'layouts/navigation' %>
-        </div>
-      </nav>
-    </header>
-    <div id="main" role="main">
-      <div class="container">
-        <div class="content">
-           <div class="row">
-            <div class="span12">
-              <%= render 'layouts/messages' %>
-              <%= yield %>
-            </div>
-          </div>
-          <footer>
-          </footer>
-        </div>
-      </div> <!--! end of .container -->
-    </div> <!--! end of #main -->
+	<%= render "layouts/banner" %>
+	<%= render "layouts/navigation" %>
+	<%= render "layouts/image_slider" %>
+	<%= render "layouts/footer" %>
   </body>
 </html>
