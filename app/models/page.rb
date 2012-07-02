@@ -29,6 +29,10 @@ class Page < ActiveRecord::Base
   def self.contact_us
     Page.find(:first, :conditions => ["pages.title =?", 'Contact Us'])
   end
+  
+  def self.team
+    Page.scoped(:joins => :category, :conditions => ["categories.name =?", 'Team'], :limit => 3)
+  end
 
   def self.products
     Page.scoped(:joins => :category, :conditions => ["categories.name =?", 'Products'])
