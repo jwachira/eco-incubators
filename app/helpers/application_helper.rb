@@ -7,4 +7,28 @@ module ApplicationHelper
   def show_title?
     @show_title
   end
+  
+  def contact_us
+    Page.contact_us
+  end
+
+  def about_us
+    Page.about_us
+  end
+  
+  def about_us_url
+    if about_us.present?
+      link_to('About Us', page_url(about_us))
+    else
+      link_to('About Us', root_url)
+    end
+  end
+  
+  def contact_us_url
+    if contact_us.present?
+      link_to('Contact Us', page_url(contact_us))
+    else
+      link_to('Contact Us', root_url)
+    end
+  end
 end

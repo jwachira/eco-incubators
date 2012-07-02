@@ -1,17 +1,24 @@
-<h3><%= "#{@page.title.capitalize} Details"%></h3>
-<p>
-	<%= link_to t(:edit_page), edit_admin_page_url(@page) %>
-	<%= link_to t(:remove_page), admin_page_url(@page), :confirm => "Are you sure?", :method => :delete %>	
-<p>
+<% title @page.title %>
+<div id="page_view">
+	<p>
+		<%= link_to t(:edit_page), edit_admin_page_url(@page) %>
+		<%= link_to t(:remove_page), admin_page_url(@page), :confirm => "Are you sure?", :method => :delete %>	
+	<p>
 
-<p>Title: <%= @page.title.capitalize %></p>
-<p>Short Description: <%= @page.short_description %></p>
-<p>Long Description: <%= @page.long_description %></p>
-<p>Display?: <%= @page.active ? 'Yes':'No' %></p>
-<p>Product?: <%= @page.is_product ? 'Yes':'No' %></p>
-<p>Price: <%= @page.price %></p>
-<p>Quantity: <%= @page.quantity %></p>
-<p>Image: <%= image_tag @page.image_url(:thumb).to_s %></p>
-
+	<p>Title: <%= @page.title.capitalize %></p>
+	<p>Category: <%= @page.category.name %></p>
+	<p>Short Description: <%= @page.short_description %></p>
+	<p>Long Description: <%= @page.long_description %></p>
+	<p>Display?: <%= @page.active ? 'Yes':'No' %></p>
+	<p>Product?: <%= @page.is_product ? 'Yes':'No' %></p>
+	<p>Price: <%= @page.price %></p>
+	<p>Quantity: <%= @page.quantity %></p>
+	<p>Image: 
+	<% if @page.image_url(:thumb).blank? %>
+		<%= "No Image" %>
+	<% else %>
+		<%= image_tag @page.image_url(:thumb).to_s %></p>
+	<% end %>
+</div>
 
 

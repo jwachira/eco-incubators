@@ -1,0 +1,63 @@
+<% title 'Egg Incubators Listing' %>
+<div id="content" class="products">
+  <section class="header">
+    <div class="container">
+      <h2 class="pull-left">0-50 Eggs</h2>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row-fluid">
+        <aside class="span3">
+          <h2>Our Products</h2>
+          <ul class="nav nav-tabs nav-stacked">
+            <li>
+              <a href="#">
+                0-50 Eggs
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                50-100 Eggs
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                300-500 Eggs
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                500+ Eggs
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Incubator Packages
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Hatchers
+              </a>
+            </li>
+          </ul>
+        </aside><!--/.aside -->
+        <div class="span9" id="main">
+          <ul class="thumbnails">
+	          <% @products.each do |product| %>
+	            <li class="span6">
+	              <div class="thumbnail clearfix">
+									<%= image_tag(product.image_url(:product)) %>
+	                <h5><%= product.title %></h5>
+	                <p><%= product.short_description %></p>
+	                <h1 class="price pull-right">Kes <%= sprintf("%.2f", product.price) %></h1>
+	              </div>
+	            </li>
+	          <% end %>
+          </ul><!--/ul.thumbnails -->
+        </div><!--/.span8 -->
+      </div><!--/.row-fluid -->
+    </div><!--/.container -->
+  </section>
+</div>

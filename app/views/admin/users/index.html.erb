@@ -1,8 +1,21 @@
-<h3><%= t(:all_users) %></h3>
-<ul class="users">
-  <% @users.each do |user| %>
-    <li>
-      <%= link_to user.name, admin_user_path(user) %> signed up <%= user.created_at.to_date %>
-    </li>
-  <% end %>
-</ul>
+<% title 'Users' %>
+
+<%= link_to 'Add New User', new_admin_user_url %><br>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Full Name</th>
+			<th>Email</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td class="leftalign"><%= link_to user.name, edit_admin_user_url(user) %></td>
+				<td class="leftalign"><%= user.email %></td>
+			</tr><!--/table-row -->
+		<% end %>
+   <!--/table-row -->
+	</tbody><!--/table-body -->
+</table>

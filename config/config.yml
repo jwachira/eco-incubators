@@ -1,0 +1,8 @@
+defaults: &defaults
+  settings:
+    app_name: 'Eco-Incubators'
+    phone_number: "+1 650 209 4890"
+    email: contact@eco-incubators.com
+    address: "101 First Street #586 Los Altos, CA 94022"
+    website: www.eco-incubators.com
+    rights_reserved: "Copyright 2012 - FashionSprout. All Rights Reserved."

@@ -154,7 +154,7 @@ DEPENDENCIES
   configatron (~> 2.9.0)
   devise
   jbuilder
-  jquery-rails
+  jquery-rails (~> 2.0.2)
   mysql2
   rails (= 3.2.3)
   rambling-slider-rails

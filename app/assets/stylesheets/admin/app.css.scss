@@ -1,0 +1,634 @@
+/*
+
+TABLE OF CONTENTS:
+
+*Base
+*Header
+*Content
+*Primary Content
+**Section: Products Single
+**Section: Item Details
+**Section: Item Add
+**Section: Search Top
+**Section: About Us
+**Section: Faq
+**Section: Privacy Policy
+**Section: Inbox
+**Section: Orders
+*Sidebar
+**Aside Dashboard
+*Footer
+*Media Queries
+
+*/
+
+
+
+
+/* =============================================================================
+   *Base
+   ========================================================================== */
+
+body 
+{ 
+	font-family: 'Open Sans', sans-serif;
+}
+
+a,
+button,
+.caret
+{
+	transition:all 250ms;
+}
+textarea
+{
+	resize:none;
+}
+h3.heading
+{
+	margin-bottom:20px;
+}
+.filter
+{
+	display:inline-block;
+	margin:0px 0px -2px 5px;
+}
+.filter span.filter-up,
+.filter span.filter-down
+{
+	display:block;
+	width:12px;
+	height:8px;
+	cursor:pointer;
+	background:url(image_path('admin/sprite.png')) -87px 0px no-repeat transparent;
+}
+.filter span.filter-down
+{
+	background-position:-104px 0px;
+}
+.filter span.filter-up:hover,
+.filter span.filter-down:hover
+{
+	opacity:0.7;
+}
+a.brand h1
+{
+/*	text-indent:-9999px;*/
+	height:127px;
+	width:322px;
+/*	background:url(../img/logo.png) 0px 0px no-repeat transparent;*/
+}
+.social-bar
+{
+	margin-left:10px;
+	height:26px;
+	display:block;
+	width: 300px;
+}
+.social-bar .pull-left:last-child
+{
+	margin-bottom: 5px;
+	margin-left:20px;
+}
+.success
+{
+	top: 0px;
+	left: 0px;
+	width:100%;
+	height:100%;
+	position:fixed;
+	background:rgba(0,0,0,0.6);
+}
+.success-inner
+{
+	top: 50%;
+	left: 50%;
+	margin-top: -150px;
+	margin-left:-211.5px;
+	max-width:500px;
+	border:2px solid #898989;
+	border-radius:5px;
+	box-shadow:0px 0px 10px rgba(0,0,0,0.7);
+	padding:40px;
+	position:fixed;
+	background: #ffffff;
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyNyUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjYzZjNmM2IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L2xpbmVhckdyYWRpZW50PgogIDxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZ3JhZC11Y2dnLWdlbmVyYXRlZCkiIC8+Cjwvc3ZnPg==);
+	background: -moz-linear-gradient(top,  #ffffff 27%, #c6c6c6 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(27%,#ffffff), color-stop(100%,#c6c6c6));
+	background: -webkit-linear-gradient(top,  #ffffff 27%,#c6c6c6 100%);
+	background: -o-linear-gradient(top,  #ffffff 27%,#c6c6c6 100%);
+	background: -ms-linear-gradient(top,  #ffffff 27%,#c6c6c6 100%);
+	background: linear-gradient(top,  #ffffff 27%,#c6c6c6 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#c6c6c6',GradientType=0 );
+}
+.success-inner h1
+{
+	color:#006396;
+	text-align:center;
+	margin-bottom:15px;
+	font-size: 3em;
+	line-height: 1.2em;
+}
+.success-inner h3,
+.success-inner h4
+{
+	text-align:center;
+	text-transform:uppercase;
+}
+.success-inner p
+{
+	margin-top:30px;
+	text-align:center;
+}
+.success-inner p button
+{
+	width:190px;
+}
+.success-inner p span
+{
+	margin:0px 10px;
+	font-size:1.2em;
+	font-style:italic;
+}
+.tophr
+{
+	margin-top:20px;
+	border:none;
+}
+.leftalign
+{
+	text-align:left !important;
+}
+div.social-single a
+{	
+	display:inline-block;
+	width:55px;
+	height:46px;
+	background:url(image_path('admin/sprite.png')) 0px -28px no-repeat transparent;
+}
+div.social-single a:hover
+{
+	opacity:0.7;
+}
+div.social-single a.fl
+{
+	background-position:-65px -28px;
+}
+div.social-single a.fb
+{
+	background-position:-127px -28px;
+}
+
+
+/* =============================================================================
+   *Header
+   ========================================================================== */
+
+#banner { }
+
+/* Fixed Topbar Navigation */
+body.top-navbar { padding-top: 60px; }
+body.admin-bar .navbar-fixed-top { top: 28px; }
+
+#navbar
+{
+	box-shadow: 0px 0px 10px 2px #CCC;
+	border-bottom: 1px solid #DDD;
+}
+#nav-main
+{
+	margin-top: 25px;
+	margin-left: -15px;
+}
+
+#nav-main li a
+{
+	text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4);
+}
+
+#nav-secondary
+{
+	font-size:0.85em;
+}
+
+#nav-secondary li a
+{
+	padding: 9px 14px 11px;
+}
+
+#nav-secondary li a:hover
+{
+	text-decoration:underline;
+}
+
+#nav-secondary li:after
+{
+	content:"";
+	display:inline-block;
+	float:right;
+	width:1px;
+	height:15px;
+	margin-top: -27px;
+	background:url(image_path('admin/sprite.png')) -15px 0px no-repeat transparent;
+}
+
+#nav-secondary li:last-child:after
+{
+	display:none;
+}
+
+#nav-secondary li:first-child + li + li a:before
+{
+	content:"";
+	display:inline-block;
+	height:15px;
+	width:16px;
+	margin-bottom:-4px;
+	margin-right:3px;
+	background:url(image_path('admin/sprite.png')) -40px 0px no-repeat transparent;
+}
+
+#nav-form
+{
+	margin-bottom:0px;
+	margin-top:23px;
+}
+
+#nav-form button.btn:after
+{
+	content:"";
+	display:inline-block;
+	float:right;
+	height:16px;
+	width:16px;
+	margin-left: 5px;
+	background:url(image_path('admin/sprite.png')) -20px 0px no-repeat transparent;
+}
+
+/* =============================================================================
+   *Content
+   ========================================================================== */
+.hero-unit img#cover
+{
+	border:1px solid #d7d7d7;
+	border-radius:2px;
+}
+.hero-unit a#avatar
+{
+	position: relative;
+	background: #fff;
+	margin:-87px 20px 0px 20px;
+}
+.hero-unit h2
+{
+	font-weight:600;
+	font-size: 1.6em;
+	color:#222;
+	line-height: 1em;
+	margin-top: 10px;
+}
+.hero-unit h2 span
+{
+	color:#0059c8;
+}
+.hero-unit address
+{
+	color:#222;
+	text-transform:uppercase;
+	margin-top: 5px;
+}
+.hero-unit div.social-single
+{
+	margin-top: 7px;
+}
+.hero-unit section
+{
+	margin-top: 80px;
+}
+.hero-unit section div.span4
+{
+	border-right:1px solid #d4d7d7;
+	box-sizing:border-box;
+}
+.hero-unit section p
+{
+	color:#6e6e6e;
+	font-size: 0.95em;
+	line-height: 1.2em;
+}
+.hero-unit section h4
+{
+	font-size:1.5em;
+	margin:20px 0px;
+}
+.hero-unit section ul.unstyled li
+{
+	color:#6e6e6e;
+}
+.hero-unit section ul.unstyled li:before
+{
+	content:"";
+	display:inline-block;
+	height:12px;
+	width:12px;
+	margin-right:10px;
+	margin-bottom:-2px;
+	background:url(image_path('admin/sprite.png')) -62px 0px no-repeat transparent;
+}
+.hero-unit section h3
+{
+	font-size:1.5em;
+	margin-bottom:20px;
+	margin-top: 5px;
+}
+   
+#content { }
+
+
+/* =============================================================================
+   *Primary Content
+   ========================================================================== */
+
+#main { }
+
+
+/* =============================================================================
+   **Section: Inbox
+   ========================================================================== */
+section#inbox 
+{
+	margin-top:30px;
+}
+section#inbox div.span9 h3.heading
+{
+	margin-bottom:39px;
+	line-height: 0.9em;
+}
+section#inbox section.message
+{
+	border: 1px solid #E1E1E1;
+	padding:10px 20px;
+	border-radius:2px;
+	max-height:auto;
+	background:#fff;
+	margin-bottom:10px;
+	transition:background 250ms;
+}
+section#inbox section.message.closed
+{
+	background:#f5f5f5;
+	overflow:hidden;
+	max-height:93px;
+}
+section#inbox section.message div.span2 img
+{
+	margin:0 auto;
+	display: block;
+}
+section#inbox section.message div.span10 div.message-name,
+section#inbox section.message div.span10 div.message-title h3
+{
+	text-transform:uppercase;
+}
+section#inbox section.message div.span10 div.message-name
+{
+	color:#3c3c3c;
+	font-size:0.85em;
+	margin-bottom:5px;
+}
+section#inbox section.message div.span10 div.message-title h3
+{
+	color:#106fb6;
+	font-size:1em;
+	font-weight:400;
+	cursor:pointer;
+	transition:all 250ms;
+}
+section#inbox section.message div.span10 div.message-title h3:hover
+{
+	text-decoration:underline;
+}
+section#inbox section.message div.span10 div.message-text p
+{
+	color:#3c3c3c;
+	font-size:0.85em;
+}
+section#inbox section.message div.span10 div.message-close
+{
+	width:30px;
+	height:30px;
+	cursor:pointer;
+	display: inline-block;
+	background:url(image_path('admin/sprite.png')) 0px -127px no-repeat transparent;
+	margin-left:10px;
+	transition:all 250ms;
+}
+section#inbox section.message div.span10 div.message-close:hover
+{
+	opacity:0.7;
+}
+
+/* =============================================================================
+   **Section: Orders
+   ========================================================================== */
+section#inbox.orders h3.heading
+{
+	margin-bottom:50px;
+}
+section#inbox.orders table
+{
+	text-transform:uppercase;
+}
+section#inbox.orders table thead
+{
+	background:#f4f4f4;
+}
+section#inbox.orders table thead th,
+section#inbox.orders table tbody td
+{
+	text-align:center;
+	color:#0065b2;
+	vertical-align: middle;
+}
+section#inbox.orders table thead th
+{
+	color:#3c3c3c;
+}
+section#inbox.orders table tbody td a.btn
+{
+	background:#fff;
+	color:#222;
+	box-sizing:border-box;
+	width:100%;
+}
+section#inbox.orders table tbody td.leftalign a
+{
+	color:#0065b2;
+}
+section#inbox.orders table tbody td.leftalign a:hover
+{
+	color:#222;
+}
+section#inbox.orders table tbody td.leftalign p
+{
+	font-size:0.85em;
+	color:#3c3c3c;
+}
+section#inbox.orders table tbody td.leftalign p span
+{
+	color:#6caf44;
+}
+section#inbox.orders table tbody td.leftalign p.table-buyer
+{
+	margin-bottom:15px;
+	margin-top:5px;
+}
+section#inbox.orders table tbody td.leftalign p.table-delivery-date,
+section#inbox.orders table tbody td.leftalign p.table-shipped
+{
+	color:#707070;
+	font-size:0.8em;
+	margin-bottom:5px;
+}
+
+/* =============================================================================
+   *Sidebar
+   ========================================================================== */
+
+#sidebar 
+{ 
+	border-left: 1px solid #DDD;
+	border-right: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	padding-bottom: 20px;
+}
+#sidebar section
+{
+	padding:0px 20px;
+}
+#sidebar hr
+{
+	margin:20px;
+	border-top:1px dashed #e6e6e6;
+}
+#sidebar blockquote
+{
+	border:none;
+	text-align:center;
+}
+#sidebar .heading
+{
+	font-weight:600;
+}
+#sidebar header h3
+{
+	text-align:center;
+	color:#fff;
+	background:#414141;
+	padding:5px 0px;
+	border-radius:2px 2px 0px 0px;
+	margin-bottom:30px;
+}
+#sidebar #sidebar-products ul li:nth-child(3n+1)
+{
+	margin-left:0px;
+}
+
+
+/* =============================================================================
+   **Aside Dashboard
+   ========================================================================== */
+
+aside.dashboard h4,
+aside.dashboard li,
+aside.dashboard li a
+{
+	text-transform:uppercase;
+}
+aside.dashboard div.progress
+{
+	margin-bottom:10px;
+}
+aside.dashboard h4
+{
+	font-weight:400;
+	font-size:0.9em;
+	color:#3c3c3c;
+	margin-bottom:20px;
+}
+aside.dashboard ul.nav
+{
+	border:1px solid #e1e1e1;
+	border-radius:2px;
+}
+aside.dashboard ul.nav li.nav-header
+{
+	font-size:1.1em;
+	color: #666;
+	padding:15px 15px;
+	background-color: #dcdcdc;
+}
+aside.dashboard ul.nav li a
+{
+	color:#3c3c3c;
+	font-size:0.8em;
+	padding:5px 15px;
+}
+aside.dashboard ul.nav li a:before
+{
+	content:"";
+	display: block;
+	width:6px;
+	height:5px;
+	float:left;
+	margin-right:7px;
+	margin-top:7px;
+	background:url(image_path('admin/sprite.png')) -27px -109px no-repeat transparent;
+}
+
+/* =============================================================================
+   *Footer
+   ========================================================================== */
+
+footer div.row-fluid ul.breadcrumb
+{
+	padding:0px;
+}
+footer div.row-fluid ul.breadcrumb:before
+{
+	content:"";
+	display: inline-block;
+	width:16px;
+	height:16px;
+	background:url(image_path('admin/sprite.png')) 0px -103px no-repeat transparent;
+	margin-bottom: -3px;
+	margin-right: 2px;
+}
+footer div.row-fluid ul.breadcrumb a
+{
+	text-transform:none;
+	color:#08c;
+}
+footer div.row-fluid ul.breadcrumb a:hover
+{
+	text-decoration:none;
+	color:#222;
+}
+footer div.row-fluid ul.nav li a
+{
+	color:#222;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+
+
+/* =============================================================================
+   *Media Queries
+   ========================================================================== */
+
+@media (max-width: 979px) {
+  /* Fix top padding when using the responsive grid with the fixed topbar */
+  body.top-navbar {
+    padding-top: 0;
+  }
+}

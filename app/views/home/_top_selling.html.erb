@@ -1,0 +1,14 @@
+<section id="img-list">
+  <div class="container">
+    <h2 class="ubuntu">Top selling Incubators</h2>
+    <ul class="thumbnails">
+	    <% @top_selling.each do |item| %>
+      <li class="span4">
+        <div class="thumbnail">
+	        <%= link_to "#{image_tag(item.image_url(:featured).to_s)}<p>#{item.title}</p>".html_safe, product_url(item) %>
+        </div>
+      </li>
+     <% end %>
+    </ul> <!-- /.thumbnails -->
+  </div> <!-- /.container -->
+</section>

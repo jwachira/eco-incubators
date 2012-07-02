@@ -1,0 +1,16 @@
+<section class="bg-clear" id="testimonial">
+  <div class="container">
+      <h2 class="ubuntu">Testimonials from our customers</h2>
+      <div class="row-fluid">
+	       <% @customer_testimonials.each do |customer_testimonial| %>
+	          <div class="span4">
+	            <header class="clearfix">
+		            <%= image_tag(customer_testimonial.image_url(:avatar),  :class => "pull-left") %>
+	              <h5><%= customer_testimonial.title %></h5>
+	            </header>
+	            <p class="testi"><%= customer_testimonial.short_description %></p>
+	          </div>
+          <% end %>
+      </div> <!-- /.row-fluid -->
+  </div> <!-- /.container -->
+</section>

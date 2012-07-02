@@ -1,11 +1,37 @@
 <% title 'Pages' %>
 
-<ul class="pages">
-  <% @pages.each do |page| %>
-    <li>
-      <%= link_to page.title, admin_page_url(page) %>
-    </li>
-  <% end %>
-</ul>
-
 <br><%= link_to "Add New Page", new_admin_page_path %></br>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Title</th>
+			<th>Category</th>
+			<th>Price</th>
+			<th>Status</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @pages.each do |page| %>
+			<tr>
+				<td class="leftalign"><%= link_to page.title, admin_page_url(page) %></td>
+				<td class="leftalign"><%= page.category.try(:name) %></td>
+				<td><%= page.price %></td>
+				<td><%= page.status %></td>
+				<td>
+					<div class="btn-group">
+					  	<a class="btn dropdown-toggle leftalign" data-toggle="dropdown" href="#">
+					    	Action
+					    <span class="caret pull-right"></span>
+					  	</a>
+					  	<ul class="dropdown-menu">
+					    	<li class="leftalign"><%= link_to 'Edit', edit_admin_page_url(page)%></li>
+					  	</ul>
+					</div><!--/.btn-group -->
+				</td>
+			</tr><!--/table-row -->
+		<% end %>
+   <!--/table-row -->
+	</tbody><!--/table-body -->
+</table>

@@ -1,11 +1,12 @@
-<br><%= f.input :title %></br>
-<br><%= f.input :short_description, :as => :text   %></br>
-<br><%= f.input :long_description, :as => :text , :input_html => {:class => "non-editor"} %></br>
-<br><%= f.input :active, :as => :boolean %></br>
-<br><%= f.input :is_product, :as => :boolean %></br>
-<br><%= f.input :quantity %></br>
-<br><%= f.input :price %></br>
-<br><%= f.file_field :image %></br>
-<br><%= f.text_field :remote_image_url %></br>
+<%= f.input :category_id, :as => :select, :collection => Category.all, :include_blank => false %><br>
+<%= f.input :title %>
+<%= f.input :short_description, :as => :text   %>
+<%= f.input :long_description, :as => :text , :input_html => {:class => "non-editor"} %>
+<%= f.input :active, :as => :boolean %>
+<%= f.input :is_product, :as => :boolean %>
+<%= f.input :quantity %>
+<%= f.input :price %>
+Select File: <%= f.file_field :image, :label => "Upload" %>
+Upload URL: <%= f.text_field :remote_image_url %><br>
 
 

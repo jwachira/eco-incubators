@@ -1,0 +1,24 @@
+<section id="slider-wrapper">
+  <div class="container">
+    <div id="myCarousel" class="carousel slide">
+      <!-- Carousel items -->
+      <div class="carousel-inner">
+		     <% @carousel_pages.each do |page| %>
+		        <div class="item <%= (page == @carousel_pages.first) ? 'active' : '' %>">
+			         <%= link_to image_tag(page.image_url(:carousel).to_s), '#' %>
+		          <div class="caption">
+		            <div class="pull-left">
+		              <p><b><%= page.title %></b></p>
+		              <p><%= page.short_description %></p>
+		            </div>
+		            <%= link_to 'BUY NOW!', product_url(page), :class => "btn btn-warning btn-large pull-right ubuntu"%>
+		          </div>
+		        </div>
+       <% end %>
+      </div><!--/.carousel-inner -->
+      <!-- Carousel nav -->
+      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+  </div>
+</section>

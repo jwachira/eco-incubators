@@ -1,10 +1,37 @@
-<h3><%= t(:all_categories) %></h3>
-<ul class="categories">
-  <% @categories.each do |category| %>
-    <li>
-      <%= link_to category.name, admin_category_url(category) %>
-    </li>
-  <% end %>
-</ul>
+<% title 'Categories' %>
 
 <br><%= link_to t(:new_category), new_admin_category_path %></br>
+
+
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>name</th>
+			<th>Parent</th>
+			<th>Status</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @categories.each do |category| %>
+			<tr>
+				<td class="leftalign"><%= link_to category.name, edit_admin_category_url(category) %></td>
+				<td class="leftalign"><%= category.parent.try(:name) %></td>
+				<td class="leftalign"><%= category.status %></td>
+				<td>
+					<div class="btn-group">
+					  	<a class="btn dropdown-toggle leftalign" data-toggle="dropdown" href="#">
+					    	Action
+					    <span class="caret pull-right"></span>
+					  	</a>
+					  	<ul class="dropdown-menu">
+					    	<li class="leftalign"><%= link_to 'Edit', edit_admin_category_url(category) %></li>
+					  	</ul>
+					</div><!--/.btn-group -->
+				</td>
+			</tr><!--/table-row -->
+		<% end %>
+   <!--/table-row -->
+	</tbody><!--/table-body -->
+</table>

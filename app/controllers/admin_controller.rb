@@ -1,8 +1,3 @@
 class AdminController < ApplicationController
-  layout 'application'
-  
-  def index
-  
-  end
-  
+  layout "admin"
 end

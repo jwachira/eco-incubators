@@ -1,0 +1,22 @@
+select {
+	border:1px solid #DDD;	
+}
+input, textarea {
+	border:1px solid #DDD;
+	width:50em;
+}
+textarea {
+	height:20em;
+}
+
+
+textarea 
+form input:active, 
+form textarea:active, 
+form input:hover, 
+form textarea:hover, 
+form input:focus, 
+form textarea:focus {
+	border-color:rgba(82, 168, 236, 0.8) !important;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(82, 168, 236, 0.6) !important;
+}
