@@ -30,6 +30,10 @@ class Page < ActiveRecord::Base
     Page.find(:first, :conditions => ["pages.title =?", 'Contact Us'])
   end
   
+  def usp
+    Page.scoped(:joins => :category, :conditions => ["categories.name =?", 'USP'], :limit => 6)
+  end
+  
   def self.team
     Page.scoped(:joins => :category, :conditions => ["categories.name =?", 'Team'], :limit => 3)
   end

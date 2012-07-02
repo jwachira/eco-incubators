@@ -52,6 +52,11 @@ namespace :app do
 end
 
 namespace :data do
+  desc "Update Currency Conversation rates"
+  task :default_data, :role => :app do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} rake db:data:create_admin_user --trace"
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} rake db:data:create_default_categories --trace"
+  end
 end
 
 
