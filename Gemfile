@@ -22,3 +22,5 @@ gem 'carrierwave'
 gem "configatron", "~> 2.9.0"
 gem 'rmagick'
 gem 'rambling-slider-rails'
+gem 'capistrano'
+gem 'capistrano-ext'
