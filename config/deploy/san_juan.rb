@@ -96,5 +96,5 @@ module SanJuan
     fetch(:god_config_path, nil) || "#{current_path}/config/god/#{role}.god"
   end
 
-end``
+end
 Capistrano.plugin :san_juan, SanJuan

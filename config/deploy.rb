@@ -1,13 +1,15 @@
 set :application, "echochicks"
 set :copy_exclude, [".git"]
+
+require 'capistrano/ext/multistage'
 set :stages, %w(staging production)
 set :default_stage, "staging"
 
 require "bundler"
 Bundler.setup(:default, :deployment)
 
-require File.dirname(__FILE__) + '/deploy/san_juan'
-require File.join(File.dirname(__FILE__), "/deploy/recipes")
+# require File.dirname(__FILE__) + '/deploy/san_juan'
+# require File.join(File.dirname(__FILE__), "/deploy/recipes")
 
 set :repository,  "https://github.com/chai2/echochicks.git"
 set :keep_releases, 4
@@ -15,7 +17,7 @@ set :scm, :git
 set :deploy_via,       :remote_cache
 set :github_username, `git config --global -l | grep github.user`.split('=')[1]
 set :bundle_flags,    ""
-san_juan.role :worker, %w(resque)
+# san_juan.role :worker, %w(resque)
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty]   = true
