@@ -152,7 +152,7 @@ DEPENDENCIES
   cancan
   capistrano
   capistrano-ext
-  carrierwave
+  carrierwave (~> 0.6.2)
   coffee-rails (~> 3.2.1)
   configatron (~> 2.9.0)
   devise

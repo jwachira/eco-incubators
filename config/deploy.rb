@@ -1,23 +1,25 @@
-set :application, "echochicks"
+set :application, 'ecoincubators'
 set :copy_exclude, [".git"]
-
-require 'capistrano/ext/multistage'
-set :stages, %w(staging production)
+set :stages, %w(beta staging production)
 set :default_stage, "staging"
 
 require "bundler"
 Bundler.setup(:default, :deployment)
 
-# require File.dirname(__FILE__) + '/deploy/san_juan'
-# require File.join(File.dirname(__FILE__), "/deploy/recipes")
+require 'capistrano/ext/multistage'
+require "bundler/capistrano"
+# thinking sphinx cap tasks
+require File.dirname(__FILE__) + '/deploy/san_juan'
+require File.join(File.dirname(__FILE__), "/deploy/recipes")
 
-set :repository,  "https://github.com/chai2/echochicks.git"
+set :repository, "git@github.com:jwachira/eco-incubators.git"
 set :keep_releases, 4
 set :scm, :git
 set :deploy_via,       :remote_cache
+
 set :github_username, `git config --global -l | grep github.user`.split('=')[1]
 set :bundle_flags,    ""
-# san_juan.role :worker, %w(resque)
+san_juan.role :worker, %w(resque)
 
 ssh_options[:forward_agent] = true
 default_run_options[:pty]   = true
@@ -29,6 +31,14 @@ set(:current_release) { fetch(:current_path) }
 set(:current_revision)  { capture("cd #{current_path}; git rev-parse --short HEAD").strip }
 set(:latest_revision)   { capture("cd #{current_path}; git rev-parse --short HEAD").strip }
 set(:previous_revision) { capture("cd #{current_path}; git rev-parse --short HEAD@{1}").strip }
+
+# check redis
+namespace :resque do
+  desc "Push a test job into Resque from each application server"
+  task :test_enqueue, :roles => [ :app ] do
+    run "cd #{current_path} && RAILS_ENV=#{rails_env} rake resque:test"
+  end
+end
 
 set :shared_dirs, %w(config uploads backup bundle tmp db) unless exists?(:shared_dirs)
 
@@ -42,23 +52,7 @@ namespace :app do
 end
 
 namespace :data do
-  desc "Setup default user"
-  task :create_admin_user, :role => :app do
-    run "cd #{current_path} && RAILS_ENV=#{rails_env} rake db:data:create_admin_user --trace"
-  end
 end
 
-# if you want to clean up old releases on each deploy uncomment this:
-# after "deploy:restart", "deploy:cleanup"
 
-# if you're still using the script/reaper helper you will need
-# these http://github.com/rails/irs_process_scripts
 
-# If you are using Passenger mod_rails uncomment this:
-# namespace :deploy do
-#   task :start do ; end
-#   task :stop do ; end
-#   task :restart, :roles => :app, :except => { :no_release => true } do
-#     run "#{try_sudo} touch #{File.join(current_path,'tmp','restart.txt')}"
-#   end
-# end
