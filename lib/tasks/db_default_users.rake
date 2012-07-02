@@ -3,10 +3,22 @@ namespace :db do
     desc "Adding default users"
     task :create_admin_user => :environment do
       User.destroy_all
-      User.find_or_create_by_email(:id => 1, :name => "James Wachira",  :email => "jamomathenge@gmail.com", :password => "1qaz2wsx", :password_confirmation => "1qaz2wsx", :confirmed_at => Time.now)
-      User.find_or_create_by_email(:id => 2, :name => "Martin Kaberia", :email => "martinkiraikabe@gmail.com", :password => "1qaz2wsx", :password_confirmation => "1qaz2wsx", :confirmed_at => Time.now)
-      User.find_or_create_by_email(:id => 3, :name => "Hoppa Otieno",   :email => " hopper.omondi@facebook.com", :password => "1qaz2wsx", :password_confirmation => "1qaz2wsx", :confirmed_at => Time.now)
-      user.add_role :admin
+      users = [
+        ['James Wachira',  'jamomathenge@gmail.com', '1qaz2wsx'],
+        ['Martin Kaberia', "martinkiraikabe@gmail.com", '1qaz2wsx'],
+        ['Hoppa Otieno', "martinkiraikabe@gmail.com", '1qaz2wsx'],
+      ]
+
+      users.each do |user|
+        user = User.find_or_create_by_email(:name                  => user[0],
+                                            :email                 => user[1],
+                                            :password              => user[2],
+                                            :password_confirmation => user[2],
+                                            :confirmed_at          => Time.now
+                                            )
+        user.save
+        user.add_role :admin
+      end
       puts "======Admin user created======"
     end
   end
