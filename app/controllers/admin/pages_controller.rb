@@ -1,4 +1,5 @@
 class Admin::PagesController < AdminController
+  before_filter :page_id, :only => [:show, :edit, :update, :destroy]
   def index
     @pages = Page.all
   end
@@ -12,7 +13,7 @@ class Admin::PagesController < AdminController
   end
 
   def edit
-    @page = Page.find(params[:id])
+    @page = Page.find(page_id)
   end
 
   def create
@@ -26,7 +27,7 @@ class Admin::PagesController < AdminController
   end
 
   def update
-    @page = Page.find(params[:id])
+    @page = Page.find(page_id)
     if @page.update_attributes(params[:page])
       redirect_to admin_page_url(@page), :notice => "Page has been successfully updated."
     else
@@ -35,7 +36,7 @@ class Admin::PagesController < AdminController
   end
 
   def destroy
-    @page = Page.find(params[:id])
+    @page = Page.find(page_id)
     if @page.destroy
       flash[:notice] = "Page record has been successfully deleted"
     else
@@ -43,4 +44,8 @@ class Admin::PagesController < AdminController
     end
     redirect_to admin_pages_url
   end  
+  
+  def page_id
+    page_id = String(params[:id]).numeric_id
+  end
 end

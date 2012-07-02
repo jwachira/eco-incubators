@@ -1,5 +1,4 @@
 class Admin::UsersController < AdminController
-  
   respond_to :html, :js
   
   def index
