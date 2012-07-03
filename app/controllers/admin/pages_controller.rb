@@ -5,15 +5,17 @@ class Admin::PagesController < AdminController
   end
 
   def show
-    @page = Page.find(params[:id])
+    @page = Page.find(page_id)
   end
 
   def new
     @page = Page.new
+    4.times{@page.photos.build}
   end
 
   def edit
     @page = Page.find(page_id)
+    4.times{@page.photos.build} unless @page.photos.present?
   end
 
   def create

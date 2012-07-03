@@ -2,12 +2,13 @@
 <div id="content" class="products">
   <section class="header">
     <div class="container">
-      <h2 class="pull-left">0-50 Eggs</h2>
+      <h2 class="pull-left">Egg Incubators Listings</h2>
     </div>
   </section>
   <section>
     <div class="container">
       <div class="row-fluid">
+	      <% if false %>
         <aside class="span3">
           <h2>Our Products</h2>
           <ul class="nav nav-tabs nav-stacked">
@@ -43,15 +44,15 @@
             </li>
           </ul>
         </aside><!--/.aside -->
+       <% end %>
         <div class="span9" id="main">
           <ul class="thumbnails">
 	          <% @products.each do |product| %>
 	            <li class="span6">
 	              <div class="thumbnail clearfix">
-									<%= image_tag(product.image_url(:product)) %>
-	                <h5><%= product.title %></h5>
-	                <p><%= product.short_description %></p>
-	                <h1 class="price pull-right">Kes <%= sprintf("%.2f", product.price) %></h1>
+									<%= link_to image_tag(product.photos.first.image_url(:product)), product_url(product) if product.photos.present? %>
+	                <h5><%= link_to product.title, product_url(product) %></h5>
+	                <h1 class="price pull-right"><%= number_to_currency(product.price, :unit => 'Kes') %></h1>
 	              </div>
 	            </li>
 	          <% end %>

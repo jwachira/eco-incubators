@@ -1,11 +1,16 @@
 class Page < ActiveRecord::Base
-
+  has_many   :photos, :as => :imageable
   belongs_to :category
-
-  attr_accessible :title, :short_description, :long_description, :active, :is_product, :quantity, :price, :image, :remote_image_url, :category_id
+  has_many   :children, :foreign_key => "parent_id" , :class_name=> "Page" , :dependent => :destroy
+  belongs_to :parent,   :foreign_key => "parent_id" , :class_name=> "Page"
+  
+  attr_accessible :title, :short_description, :long_description, :active, :is_product, :quantity, :price, :image, :remote_image_url, :category_id, :parent_id, :photos_attributes
 
   mount_uploader :image, ImageUploader
 
+
+  accepts_nested_attributes_for :photos, :allow_destroy => true
+  
   def status
     if self.active?
       "Published"
