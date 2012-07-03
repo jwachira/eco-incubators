@@ -7,38 +7,18 @@
   <%= render :partial => "customer_testimonials" %>
   <section id="reasons">
     <div class="container">
-      <h2 class="ubuntu">Why you should use echo-chicks</h2>
+      <h2 class="ubuntu">Why you should use Eco-Incubators</h2>
       <div class="row-fluid">
-        <div class="span4">
-          <div class="reason first">
-            <h3>Lorem Ipsum Dollor</h3>
-            <p>"Praesent sapien enim, venenatis sit amet sagittis at, tincidunt eget nunc."</p>
-          </div>
-          <div class="reason second">
-            <h3>Lorem Ipsum Dollor</h3>
-            <p>"Praesent sapien enim, venenatis sit amet sagittis at, tincidunt eget nunc."</p>
-          </div>
-        </div>
-        <div class="span4">
-          <div class="reason third">
-            <h3>Lorem Ipsum Dollor</h3>
-            <p>"Praesent sapien enim, venenatis sit amet sagittis at, tincidunt eget nunc."</p>
-          </div>
-          <div class="reason fourth">
-            <h3>Lorem Ipsum Dollor</h3>
-            <p>"Praesent sapien enim, venenatis sit amet sagittis at, tincidunt eget nunc."</p>
-          </div>
-        </div>
-        <div class="span4">
-          <div class="reason fifth">
-            <h3>Lorem Ipsum Dollor</h3>
-            <p>"Praesent sapien enim, venenatis sit amet sagittis at, tincidunt eget nunc."</p>
-          </div>
-          <div class="reason sixth">
-            <h3>Lorem Ipsum Dollor</h3>
-            <p>"Praesent sapien enim, venenatis sit amet sagittis at, tincidunt eget nunc."</p>
-          </div>
-        </div>
+	      <% @product_usp.in_groups_of(3, false).each do |pages| %>
+	        <div class="span4">
+		        <% pages.each do |page| %>
+	  	        <div class="reason <%= cycle('third', 'second', 'first', 'fourth') %>">
+		            <h3><%= page.title %></h3>
+		            <p><%= page.short_description %></p>
+		          </div>
+		        <% end %>
+	        </div>
+       <% end %>
       </div>
     </div>
   </section>
