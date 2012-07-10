@@ -14,7 +14,7 @@
               <hr>
               
             <% end %>
-            <p><%= @page.short_description     %></p>
+            <%= @page.short_description.html_safe     %>
             <hr>
             
           </div>
@@ -25,7 +25,7 @@
         <div class="row-fluid">
           <div class="span7">
             <h2 class="ubuntu">Features & Specifications</h2>
-            <p><%= simple_format(@page.long_description) %></p>
+             <%= simple_format(@page.long_description.html_safe) %>
           </div>
           <div class="span5">
             <%= image_tag(@page.photos.second.image_url(:featured)) if @page.photos.second.present? %>
