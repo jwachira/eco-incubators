@@ -21,7 +21,7 @@ Capistrano::Configuration.instance.load do
   after "deploy:set_rake_path",          "deploy:migrate"
   after "deploy:migrate",                "passenger:restart"
   
-  before 'deploy:update_code', 'deploy:web:disable'
-  after 'deploy:restart', 'deploy:web:enable'
-  after "deploy:web:enable", "passenger:kickstart"
+  # before 'deploy:update_code', 'deploy:web:disable'
+  after 'deploy:restart', "passenger:kickstart" #'deploy:web:enable'
+  # after "deploy:web:enable", "passenger:kickstart"
 end
