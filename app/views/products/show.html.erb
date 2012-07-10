@@ -14,7 +14,7 @@
               <hr>
               
             <% end %>
-            <%= @page.short_description.html_safe     %>
+            <%= simple_format @page.short_description.html_safe     %>
             <hr>
             
           </div>
@@ -29,6 +29,7 @@
           </div>
           <div class="span5">
             <%= image_tag(@page.photos.second.image_url(:featured)) if @page.photos.second.present? %>
+            <%= image_tag(@page.photos.third.image_url(:featured)) if @page.photos.third.present? %>
           </div>
         </div>
     </section>
@@ -37,7 +38,7 @@
 	      <div class="container">
 	        <div class="row-fluid">
 	          <div class="span5">
-	            <%= image_tag(@page.photos.third.image_url(:featured)) if @page.photos.third.present?%>
+	            <%= image_tag(@page.photos.fourth.image_url(:featured)) if @page.photos.fourth.present?%>
 	          </div>
 	          <div class="span7">
 	            <h2 class="ubuntu">Reviews</h2>
