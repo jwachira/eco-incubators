@@ -5,7 +5,7 @@
       <div class="carousel-inner">
 		     <% @carousel_pages.each do |page| %>
 		        <div class="item <%= (page == @carousel_pages.first) ? 'active' : '' %>">
-							<%= link_to image_tag(page.photos.first.image_url(:carousel)), '#' if page.photos.first.present? %>
+							<%= link_to image_tag(page.image_url(:carousel)), '#' if page.photos.first.present? %>
 		          <div class="caption">
 		            <div class="pull-left">
 		              <p><b><%= page.title %></b></p>
