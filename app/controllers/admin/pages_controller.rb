@@ -15,7 +15,7 @@ class Admin::PagesController < AdminController
 
   def edit
     @page = Page.find(page_id)
-    4.times{@page.photos.build} unless @page.photos.size < 2
+    4.times{@page.photos.build} if @page.photos.size < 2
   end
 
   def create
