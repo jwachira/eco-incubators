@@ -6,13 +6,13 @@
         <div class="row-fluid">
           <div class="span5">
             <%= image_tag(@page.photos.first.image_url(:featured)) if @page.photos.first.present? %>
+            <%= image_tag(@page.photos.second.image_url(:featured)) if @page.photos.second.present? %>
           </div>
           <div class="span7">
             <h2 class="ubuntu"><%= @page.title %></h2>
             <% if @page.price %>
             	<h3>Price: <%= number_to_currency @page.price, :unit => 'Kes' %></h3>
               <hr>
-              
             <% end %>
             <%= simple_format @page.short_description.html_safe     %>
             <hr>
@@ -28,9 +28,9 @@
              <%= simple_format(@page.long_description.html_safe) %>
           </div>
           <div class="span5">
-            <%= image_tag(@page.photos.second.image_url(:featured)) if @page.photos.second.present? %>
-            <div style="clear:both;"></div>
             <%= image_tag(@page.photos.third.image_url(:featured)) if @page.photos.third.present? %>
+            <div style="clear:both;"></div>
+            <%= image_tag(@page.photos.fourth.image_url(:featured)) if @page.photos.fourth.present? %>
           </div>
         </div>
     </section>
@@ -39,7 +39,7 @@
 	      <div class="container">
 	        <div class="row-fluid">
 	          <div class="span5">
-	            <%= image_tag(@page.photos.fourth.image_url(:featured)) if @page.photos.fourth.present?%>
+	            <%= image_tag(@page.photos.fifth.image_url(:featured)) if @page.photos.fifth.present?%>
 	          </div>
 	          <div class="span7">
 	            <h2 class="ubuntu">Reviews</h2>
