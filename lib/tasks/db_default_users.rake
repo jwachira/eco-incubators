@@ -5,8 +5,7 @@ namespace :db do
       User.destroy_all
       users = [
         ['James Wachira',  'jamomathenge@gmail.com', '1qaz2wsx'],
-        ['Martin Kaberia', "martinkiraikabe@gmail.com", '1qaz2wsx'],
-        ['Hoppa Otieno', "martinkiraikabe@gmail.com", '1qaz2wsx'],
+        ['Martin Kibe', "martinkibe@gmail.com", '1qaz2wsx']
       ]
 
       users.each do |user|

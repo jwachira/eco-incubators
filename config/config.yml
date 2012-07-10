@@ -1,6 +1,6 @@
 defaults: &defaults
   settings:
-    app_name: 'Eco-Incubators'
+    app_name: 'IONIC Medical Devices'
     phone_number: "+1 650 209 4890"
     email: contact@eco-incubators.com
     address: "101 First Street #586 Los Altos, CA 94022"

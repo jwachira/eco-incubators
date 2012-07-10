@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title><%= yield(:title) %> | Eco-Incubators</title>
+    <title><%= yield(:title) %> | IONIC Medical Devices</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -26,12 +26,14 @@
     <div id="banner">
       <div class="container">
         <address class="pull-left ubuntu">
-					Mid-Town Business Plaza, Accra Road Off Tom Mboya Street, 3rd flr RN. T72
+					IONIC Medical Devices
+					<span style="font-size:12px; margin-top:-20px; display:inline-block"> - Enhancing a healthy living</span>
+					<!-- Mid-Town Business Plaza, Accra Road Off Tom Mboya Street, 3rd flr RN. T72 -->
         </address>
-        <div class="pull-right tel">
-          <p class="ubuntu"><a href="tel:+254-723-456-456">Call us at: +254-0723-958-428</a></p>
-          <p class="ubuntu"><span>Open, Mon - Sat 9:00 AM - 18:00 PM</span></p>
-        </div>
+        <!-- <div class="pull-right tel"> -->
+          <!-- <p class="ubuntu"><a href="tel:+254-723-456-456">Call us at: +254-0723-958-428</a></p> -->
+          <!-- <p class="ubuntu"><span>Open, Mon - Sat 9:00 AM - 18:00 PM</span></p> -->
+        <!-- </div> -->
       </div>
     </div>
     <div class="navbar" id="navbar">
@@ -42,7 +44,6 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <h1><%= link_to "EcoIncubators", root_url, :class => "brand ubuntu"  %></h1>
           <%= render :partial => "layouts/navigation" %>
         </div><!--/.container -->
       </div><!--/.navbar-inner -->
@@ -51,7 +52,7 @@
     <footer>
       <div class="container">
         <hr>
-        <p>&copy; <%= Date.today.year %> Eco-Incubators Copyright. All Rights Reserved.</p>
+        <p>&copy; <%= Date.today.year %> IONIC Medical Devices Copyright. All Rights Reserved.</p>
       </div>
     </footer>
 
