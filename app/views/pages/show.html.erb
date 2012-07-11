@@ -7,7 +7,7 @@
           </div>
           <div class="span7">
             <h2 class="ubuntu"><%= @page.title %></h2>
-            <p><%= @page.short_description     %></p>
+            <%= simple_format @page.short_description     %>
           </div>
         </div>
     </section>
@@ -15,7 +15,7 @@
       <div class="container">
         <div class="row-fluid">
           <div class="span7">
-            <h2 class="ubuntu">Features & Specifications</h2>
+            <h2 class="ubuntu">Regional Offices</h2>
             <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi eget diam lectus.</p>
             <ul class="unstyled">
               <li><i class="icon-ok"></i><p><b>

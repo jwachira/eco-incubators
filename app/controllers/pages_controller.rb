@@ -5,4 +5,8 @@ class PagesController < ApplicationController
   @page = Page.find(page_id)
  end
  
+ def contact_us
+   @page             = Page.contact_us
+ end
+ 
 end

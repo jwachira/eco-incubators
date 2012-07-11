@@ -24,11 +24,4 @@ module ApplicationHelper
     end
   end
   
-  def contact_us_url
-    if contact_us.present?
-      link_to('Contact Us', page_url(contact_us))
-    else
-      link_to('Contact Us', root_url)
-    end
-  end
 end
