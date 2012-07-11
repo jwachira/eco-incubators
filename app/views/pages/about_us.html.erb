@@ -5,10 +5,10 @@
     <div class="container">
       <div class="row-fluid">
 	      <div class="span5">
-					<%= image_tag(@page.image_url(:featured)) if @page.image_url.present? %> %>
+					<%= image_tag(@page.image_url(:featured)) if @page.image_url.present? %>
          </div>
         <div class="span7">
-          <h2 class="ubuntu">About Us</h2>
+          <h2 class="ubuntu">About IONIC Medical Devices.</h2>
           <%= simple_format @page.try(:short_description)     %>
         </div>
       </div>
