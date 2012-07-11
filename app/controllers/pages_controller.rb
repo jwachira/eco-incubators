@@ -6,11 +6,11 @@ class PagesController < ApplicationController
  end
  
  def contact_us
-   @page             = Page.contact_us
+   @page = Page.contact_us
  end
  
  def about_us
-   @page             = Page.about_us
+   @page  = Page.about_us
  end
  
 
