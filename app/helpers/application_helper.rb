@@ -16,12 +16,5 @@ module ApplicationHelper
     Page.about_us
   end
   
-  def about_us_url
-    if about_us.present?
-      link_to('About Us', page_url(about_us))
-    else
-      link_to('About Us', root_url)
-    end
-  end
   
 end
