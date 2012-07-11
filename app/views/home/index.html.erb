@@ -9,7 +9,7 @@
     <div class="container">
       <h2 class="ubuntu">Why you should use IONIC Medical Devices</h2>
       <div class="row-fluid">
-	      <% @product_usp.in_groups_of(3, false).each do |pages| %>
+	      <% @product_usp.in_groups_of(1, false).each do |pages| %>
 	        <div class="span4">
 		        <% pages.each do |page| %>
 	  	        <div class="reason <%= cycle('third', 'second', 'first', 'fourth') %>">
