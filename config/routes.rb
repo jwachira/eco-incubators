@@ -15,5 +15,6 @@ EcoIncubators::Application.routes.draw do
   resources :products, :only => [:index, :show]
   match 'admin' => "admin/pages#index",     :as => :admin_dashboard
   match 'contact-us' => 'pages#contact_us', :as => :contact_us
-
+  match 'about-us'   => 'pages#about_us',   :as => :about_us
+  
 end

@@ -1,0 +1,25 @@
+<% title "About IONIC Medical Devices" %>
+
+<div id="content" class="aboutus">
+  <section>
+    <div class="container">
+      <div class="row-fluid">
+	      <div class="span5">
+					<%= image_tag(@page.image_url(:featured)) if @page.image_url.present? %> %>
+         </div>
+        <div class="span7">
+          <h2 class="ubuntu">About Us</h2>
+          <%= simple_format @page.try(:short_description)     %>
+        </div>
+      </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span7">
+          <h2 class="ubuntu">Regional Offices</h2>
+          <%= simple_format @page.try(:long_description) %>
+        </div>
+      </div>
+  </section>
+</div>
