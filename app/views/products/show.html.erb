@@ -1,4 +1,15 @@
 <% title @page.title %>
+<% set_meta_tags(:keywords    => "IONIC Jade massage beds, thermal massage, infrared massagers, projector massagers, thermal therapy, thermal massage cushion seats. "%>
+<% set_meta_tags(:description =>  @page.short_description)   %>
+<% set_meta_tags(:canonical   =>  product_url(@page) ) %>
+<% set_meta_tags(:open_graph => {
+    :title => "State of the art massage equipments to help heal your spinal and back problems.(Jade massage beds, Jade mattresses and thermal therapy equipments)",
+    :type  => :website,
+    :url   => product_url(@page),
+    :image => "http://www.ionicmedicaldevices.com/uploads/photo/image/11/featured_main-photo.png",
+    :description => "IONIC Medical Devices manufactures and supplies thermal massage beds, infrared massage devices, thermal therapy equipments."
+  })
+%>
 
   <div id="content" class="aboutus">
     <section>
