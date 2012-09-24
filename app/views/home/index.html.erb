@@ -1,15 +1,28 @@
-<% title 'Buy Automatic Egg Incubators, Hatchers & Incubator Parts.' %>
+<% title 'Thermal Jade Massagers, Thermal Massage Beds & Home Health Care Products' %>
+<% set_meta_tags(:keywords    => "IONIC Jade massage beds, thermal massage, infrared massage, projector massagers, thermal therapy, thermal massage cushion seats.") %>
+<% set_meta_tags(:description =>  "IONIC Medical Devices manufactures and supplies thermal massage beds, infrared massage devices, thermal therapy equipments.")   %>
+<% set_meta_tags(:canonical   =>  root_url ) %>
+<% set_meta_tags(:open_graph => {
+    :title => "State of the art massage equipments to help heal your spinal and back problems.",
+    :type  => :website,
+    :url   => root_url,
+    :image => "http://www.ionicmedicaldevices.com/uploads/photo/image/11/featured_main-photo.png",
+    :description => "IONIC Medical Devices manufactures and supplies thermal massage beds, infrared massage devices, thermal therapy equipments."
+  })
+%>
 
 <%= render :partial => "carousel" %>
 </div><!--/.navbar -->
 <div id="content">
   <%= render :partial => "top_selling" %>
-  <%= render :partial => "customer_testimonials" %>
+  <% if false %>
+  	<%= render :partial => "customer_testimonials" %>
+  <% end %>
   <section id="reasons">
     <div class="container">
-      <h2 class="ubuntu">Why you should use Eco-Incubators</h2>
+      <h2 class="ubuntu">Why you should use IONIC Medical Devices</h2>
       <div class="row-fluid">
-	      <% @product_usp.in_groups_of(3, false).each do |pages| %>
+	      <% @product_usp.in_groups_of(1, false).each do |pages| %>
 	        <div class="span4">
 		        <% pages.each do |page| %>
 	  	        <div class="reason <%= cycle('third', 'second', 'first', 'fourth') %>">

@@ -1,4 +1,15 @@
 <% title @page.title %>
+<% set_meta_tags(:keywords    => "IONIC Jade massage beds, thermal massage, infrared massagers, projector massagers, thermal therapy, thermal massage cushion seats.") %>
+<% set_meta_tags(:description =>  @page.short_description)   %>
+<% set_meta_tags(:canonical   =>  product_url(@page) ) %>
+<% set_meta_tags(:open_graph => {
+    :title => "State of the art massage equipments to help heal your spinal and back problems.(Jade massage beds, Jade mattresses and thermal therapy equipments)",
+    :type  => :website,
+    :url   => product_url(@page),
+    :image => "http://www.ionicmedicaldevices.com/uploads/photo/image/11/featured_main-photo.png",
+    :description => "IONIC Medical Devices manufactures and supplies thermal massage beds, infrared massage devices, thermal therapy equipments."
+  })
+%>
 
   <div id="content" class="aboutus">
     <section>
@@ -6,15 +17,15 @@
         <div class="row-fluid">
           <div class="span5">
             <%= image_tag(@page.photos.first.image_url(:featured)) if @page.photos.first.present? %>
+            <%= image_tag(@page.photos.second.image_url(:featured)) if @page.photos.second.present? %>
           </div>
           <div class="span7">
             <h2 class="ubuntu"><%= @page.title %></h2>
             <% if @page.price %>
             	<h3>Price: <%= number_to_currency @page.price, :unit => 'Kes' %></h3>
               <hr>
-              
             <% end %>
-            <p><%= @page.short_description     %></p>
+            <%= simple_format @page.short_description.html_safe     %>
             <hr>
             
           </div>
@@ -25,10 +36,12 @@
         <div class="row-fluid">
           <div class="span7">
             <h2 class="ubuntu">Features & Specifications</h2>
-            <p><%= simple_format(@page.long_description) %></p>
+             <%= simple_format(@page.long_description.html_safe) %>
           </div>
           <div class="span5">
-            <%= image_tag(@page.photos.second.image_url(:featured)) if @page.photos.second.present? %>
+            <%= image_tag(@page.photos.third.image_url(:featured)) if @page.photos.third.present? %>
+            <div style="clear:both;"></div>
+            <%= image_tag(@page.photos.fourth.image_url(:featured)) if @page.photos.fourth.present? %>
           </div>
         </div>
     </section>
@@ -37,10 +50,10 @@
 	      <div class="container">
 	        <div class="row-fluid">
 	          <div class="span5">
-	            <%= image_tag(@page.photos.third.image_url(:featured)) if @page.photos.third.present?%>
+	            <%= image_tag(@page.photos.fifth.image_url(:featured)) if @page.photos.fifth.present?%>
 	          </div>
 	          <div class="span7">
-	            <h2 class="ubuntu">Incubator Reviews</h2>
+	            <h2 class="ubuntu">Reviews</h2>
 	           <div class="fb-comments" data-href="<%= product_url(@page) %>" data-num-posts="3" data-width="500"></div>
 	          </div>
 	        </div>

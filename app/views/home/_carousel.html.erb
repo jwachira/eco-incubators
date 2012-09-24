@@ -5,11 +5,11 @@
       <div class="carousel-inner">
 		     <% @carousel_pages.each do |page| %>
 		        <div class="item <%= (page == @carousel_pages.first) ? 'active' : '' %>">
-			         <%= link_to image_tag(page.image_url(:carousel).to_s), '#' %>
+							<%= link_to image_tag(page.image_url), product_url(page) if page.photos.first.present? %>
 		          <div class="caption">
 		            <div class="pull-left">
 		              <p><b><%= page.title %></b></p>
-		              <p><%= page.short_description %></p>
+		              <!-- <p><%#= page.short_description %></p> -->
 		            </div>
 		            <%= link_to 'BUY NOW!', product_url(page), :class => "btn btn-warning btn-large pull-right ubuntu"%>
 		          </div>

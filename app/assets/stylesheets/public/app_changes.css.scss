@@ -1,5 +1,18 @@
-h1 span {
+h1 a span {
 	clear:both;
 	display:block;
-	font-size:10px;
+	font-size:15px;
+/*	margin-top:-20px;*/
+}
+h1 {
+	font-size:1.5em;
+}
+h3.tag_line {
+	width:100%;
+	display:block;
+	clear:both;
+}
+#banner address a {
+	text-decoration:none;
+	color: #FFF;
 }

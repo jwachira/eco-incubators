@@ -1,4 +1,4 @@
-set :application, 'ecoincubators'
+set :application, 'ionic'
 set :copy_exclude, [".git"]
 set :stages, %w(beta staging production)
 set :default_stage, "staging"

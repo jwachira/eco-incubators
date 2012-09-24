@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120703020732) do
+ActiveRecord::Schema.define(:version => 20120710065335) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -23,8 +23,8 @@ ActiveRecord::Schema.define(:version => 20120703020732) do
 
   create_table "pages", :force => true do |t|
     t.string   "title"
-    t.string   "short_description"
-    t.string   "long_description"
+    t.text     "short_description"
+    t.text     "long_description"
     t.boolean  "active"
     t.boolean  "is_product"
     t.integer  "quantity"

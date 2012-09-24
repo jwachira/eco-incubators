@@ -6,7 +6,7 @@
 	<p>
 
 	<p>Title: <%= @page.title.capitalize %></p>
-	<p>Category: <%= @page.category.name %></p>
+	<p>Category: <%= @page.category.try(:name) %></p>
 	<p>Short Description: <%= @page.short_description %></p>
 	<p>Long Description: <%= @page.long_description %></p>
 	<p>Display?: <%= @page.active ? 'Yes':'No' %></p>

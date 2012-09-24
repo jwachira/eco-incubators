@@ -1,0 +1,38 @@
+<% title 'IONIC Medical Devices Contact Information'%>
+<% set_meta_tags(:keywords    => "IONIC Jade massage beds, thermal massage, infrared massagers, projector massagers, thermal therapy, thermal massage cushion seats.") %>
+<% set_meta_tags(:description =>  @page.short_description)   %>
+<% set_meta_tags(:canonical   =>  contact_us_url ) %>
+<% set_meta_tags(:open_graph => {
+    :title => "State of the art massage equipments to help heal your spinal and back problems.(Jade massage beds, Jade mattresses and thermal therapy equipments)",
+    :type  => :website,
+    :url   => contact_us_url,
+    :image => "http://www.ionicmedicaldevices.com/uploads/photo/image/11/featured_main-photo.png",
+    :description => "IONIC Medical Devices manufactures and supplies thermal massage beds, infrared massage devices, thermal therapy equipments."
+  })
+%>
+
+
+<div id="content" class="aboutus">
+  <section>
+    <div class="container">
+      <div class="row-fluid">
+	      <div class="span5">
+           <div style="width:425px;height:350px"><iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=101%2BFirst%2BStreet%2B%23586%2BLos%2BAltos%2C%2BCA%2B94022(IONIC+Medical+Devices+HQ)@37.380169,-122.119419&ie=UTF8&z=12&t=m&iwloc=near&output=embed"></iframe><br><table width="425" cellpadding="0" cellspacing="0" border="0"><tr><td align="left"><small><a href="http://maps.google.com/maps?f=q&source=s_q&hl=en&geocode=&q=101%2BFirst%2BStreet%2B%23586%2BLos%2BAltos%2C%2BCA%2B94022(IONIC+Medical+Office+HQ)@37.380169,-122.119419&ie=UTF8&z=12&t=m&iwloc=near">
+							View Larger Map</a></small></td><td align="right"><small><a href="http://www.embedgooglemap.com">embed google map</a></small></td></tr></table></div>
+         </div>
+        <div class="span7">
+          <h2 class="ubuntu"><%= @page.title %></h2>
+          <%= simple_format @page.try(:short_description)     %>
+        </div>
+      </div>
+  </section>
+  <section>
+    <div class="container">
+      <div class="row-fluid">
+        <div class="span7">
+          <h2 class="ubuntu">Regional Offices</h2>
+          <%= simple_format @page.try(:long_description) %>
+        </div>
+      </div>
+  </section>
+</div>
